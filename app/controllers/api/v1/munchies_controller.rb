@@ -34,7 +34,8 @@ class Api::V1::MunchiesController < ApplicationController
     yelp_conn.authorization :Bearer, ENV['YELP_API_KEY']
     yelp_response = yelp_conn.get("/v3/businesses/search")
     yelp_results = JSON.parse(yelp_response.body, symbolize_names: true)[:businesses]
+    display_city = params[:end].strip.split(',')[0].titleize
 
-    render json: MunchiesSerializer.new(yelp_results).results
+    render json: MunchiesSerializer.new(yelp_results, display_city).munchies_index
   end
 end
