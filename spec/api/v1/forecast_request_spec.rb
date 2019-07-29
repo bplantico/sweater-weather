@@ -7,6 +7,6 @@ describe "Forecast API" do
 
     forecast = JSON.parse(response.body)
 
-    expect(forecast["data"].count).to eq(1)
+    expect(forecast.count).to eq(2)
   end
 end
