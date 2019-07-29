@@ -10,11 +10,11 @@ class Api::V1::MunchiesController < ApplicationController
       faraday.adapter Faraday.default_adapter
     end
     directions_response = directions_conn.get("/maps/api/directions/json")
-    result = JSON.parse(directions_response.body, symbolize_names: true)[:routes][0][:legs][0]
+    google_result = JSON.parse(directions_response.body, symbolize_names: true)[:routes][0][:legs][0]
 
     # Prepping params to send to YELP API
-    trip_duration = result[:duration][:value]
-    destination_coords = result[:end_location]
+    trip_duration = google_result[:duration][:value]
+    destination_coords = google_result[:end_location]
     end_lat = destination_coords[:lat]
     end_lng = destination_coords[:lng]
     leave_at = Time.now
@@ -33,6 +33,7 @@ class Api::V1::MunchiesController < ApplicationController
     end
     yelp_conn.authorization :Bearer, ENV['YELP_API_KEY']
     yelp_response = yelp_conn.get("/v3/businesses/search")
+    yelp_results = JSON.parse(yelp_response.body, symbolize_names: true)[:businesses]
     require "pry"; binding.pry
   end
 end
