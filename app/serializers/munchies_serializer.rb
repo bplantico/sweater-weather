@@ -8,7 +8,7 @@ class MunchiesSerializer
   end
 
   def munchies_index
-
+    restaurants_hash = Hash.new
     restaurants = @yelp_results.map do |restaurant|
       restaurant_hash_object = {"name" => "#{restaurant[:name]}", "address" => "#{restaurant[:location][:display_address]}"}
     end
@@ -17,8 +17,5 @@ class MunchiesSerializer
     hash["city"] = @city
     hash["restaurants"] = restaurants
     hash.to_json
-
   end
 end
-# Name: #{result[:name]}
-# Address: #{result[:location][:display_address]}
