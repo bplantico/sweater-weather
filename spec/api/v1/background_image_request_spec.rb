@@ -5,8 +5,10 @@ describe "Background image API" do
     get '/api/v1/backgrounds?location=denver,co'
     expect(response).to be_successful
 
-    forecast = JSON.parse(response.body)
-
-    expect(background_image["url"].count).to eq(1)
+    background_images = JSON.parse(response.body)
+    expect(background_images["background_image_urls"].count).to eq(24)
   end
 end
+
+# circle back to refactor this test with a mock/stub since currently brittle
+# because results could easily change and start failing test
