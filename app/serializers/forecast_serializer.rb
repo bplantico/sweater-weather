@@ -87,7 +87,7 @@ class ForecastSerializer
   def formatted_daily_forecast_objects
     day_objects = @forecast[:daily][:data][1..5]
     day_objects.map do |day|
-      {"time" => "#{(Time.at(0) + day[:time]).strftime('%A')}",
+      {"day" => "#{(Time.at(0) + day[:time]).strftime('%A')}",
       "icon" => "#{day[:icon]}",
       "precipitation" => "#{day[:precipType]} #{formatted_precip_percentage(day[:precipProbability])}",
       "high_temp" => "↑ #{formatted_temp(day[:temperatureHigh])}°",
