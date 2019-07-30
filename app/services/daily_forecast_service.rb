@@ -1,8 +1,7 @@
 class DailyForecastService
 
   def get_five_day_forecast(location)
-    lcs = LocationCoordinatesService.new
-    coords = lcs.get_coordinates(location)
+    coords = LocationCoordinatesService.new.get_coordinates(location)
     lat = coords[:lat]
     long = coords[:lng]
 

@@ -12,7 +12,7 @@ class GiphyService
     Faraday.new("url" => 'http://api.giphy.com/v1/') do |faraday|
       faraday.params['api_key'] = ENV['GIPHY_API_KEY']
       faraday.params['q'] = search_term
-      faraday.params['limit'] = 5
+      faraday.params['limit'] = 1
       faraday.adapter Faraday.default_adapter
     end
   end
@@ -22,5 +22,3 @@ class GiphyService
     JSON.parse(result.body, symbolize_names: true)
   end
 end
-
-# api.giphy.com/v1/gifs/search
