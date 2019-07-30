@@ -7,6 +7,7 @@ describe "Background image API" do
 
     background_images = JSON.parse(response.body)
     expect(background_images["background_image_urls"].count).to eq(24)
+    expect(background_images["background_image_urls"][0]).to start_with("https://")
   end
 end
 
