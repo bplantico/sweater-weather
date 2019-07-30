@@ -5,8 +5,6 @@ Rails.application.routes.draw do
         get '/forecast', to: 'forecast#show'
         get '/backgrounds', to: 'backgrounds#index'
         get '/munchies', to: 'munchies#index'
-        
-        # /api/v1/munchies
     end
   end
 end
