@@ -5,8 +5,7 @@ describe "Munchies API" do
     get '/api/v1/munchies?start=pueblo,co&end=denver,co&food=chinese'
     expect(response).to be_successful
 
-    result = JSON.parse(response.body)
-    expect(result[:restaurants].count).to
-     eq(3)
+    result = JSON.parse(response.body, symbolize_names: true)
+    expect(result[:restaurants].count).to eq(3)
   end
 end

@@ -8,10 +8,9 @@ class MunchiesSerializer
   end
 
   def munchies_index
-
     hash = Hash.new
     hash["city"] = @city
     hash["restaurants"] = @yelp_results
-    hash.to_json
+    hash
   end
 end

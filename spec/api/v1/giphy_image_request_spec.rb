@@ -6,6 +6,5 @@ describe "Giphy image API" do
     expect(response).to be_successful
 
     result = JSON.parse(response.body)
-    require "pry"; binding.pry
   end
 end

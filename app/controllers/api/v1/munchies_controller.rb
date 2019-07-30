@@ -1,12 +1,11 @@
 class Api::V1::MunchiesController < ApplicationController
   def index
-    origin = params[:start].gsub(',',',+').gsub(' ','+')
-    destination = params[:end].gsub(',',',+').gsub(' ','+')
+    origin = params[:start]
+    destination = params[:end]
     trip_duration = GoogleDirectionsService.new.get_duration(origin, destination)
 
-    leave_at = Time.now
-    arrival_time = (leave_at + trip_duration).to_i
     food_type = params[:food]
+    arrival_time = (Time.now + trip_duration).to_i
 
     yelp_results = YelpBusinessSearchService.new.get_restaurants(destination, food_type, arrival_time)
     display_city = params[:end].strip.split(',')[0].titleize
