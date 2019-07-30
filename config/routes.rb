@@ -5,9 +5,7 @@ Rails.application.routes.draw do
         get '/forecast', to: 'forecast#show'
         get '/backgrounds', to: 'backgrounds#index'
         get '/munchies', to: 'munchies#index'
-        get '/gifs', to: 'gifs#index'
+        get '/gifs', to: 'gifsforecast#index'
     end
   end
 end
-
-# /api/v1/gifs?location=denver,co
