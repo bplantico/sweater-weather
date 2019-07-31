@@ -8,7 +8,7 @@ class Api::V1::SessionsController < ApplicationController
         session[:user_id] = user.id
         render json: UserSerializer.new(user), status: :ok
       else
-        render json: "{ Something went wrong. }".to_json, status: :bad_request
+        render json: "{ Your api key is not active. }".to_json, status: :bad_request
       end
     else
       render json: "{ Please check that the email and password you've entered are correct. }".to_json
