@@ -58,8 +58,7 @@ describe 'Users API', type: :request do
       "password": "wrong_password"
       }
 
-    expect(response).to be_successful
-    expect(response.status).to eq(200)
+    expect(response.status).to eq(401)
 
     result = JSON.parse(response.body)
 
