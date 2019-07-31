@@ -63,7 +63,7 @@ describe 'Users API', type: :request do
 
     result = JSON.parse(response.body)
 
-    expect(result).to eq("{ Sorry, that email and password don't match. }")
+    expect(result).to eq("{ Please check that the email and password you've entered are correct. }")
   end
 
   it "doesn't return api_key if user's api_key has been deactivated" do
@@ -78,6 +78,6 @@ describe 'Users API', type: :request do
 
     result = JSON.parse(response.body)
 
-    expect(result).to eq("{ Something went wrong. }")
+    expect(result).to eq("{ Your api key is not active. }")
   end
 end
