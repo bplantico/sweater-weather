@@ -2,7 +2,7 @@ class Api::V1::MunchiesController < ApplicationController
   def index
     origin = params[:start]
     destination = params[:end]
-    trip_duration = GoogleDirectionsService.new.get_duration(origin, destination)
+    trip_duration = GoogleDirectionsService.get_duration(origin, destination)
 
     food_type = params[:food]
     arrival_time = (Time.now + trip_duration).to_i

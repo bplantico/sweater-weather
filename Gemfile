@@ -49,6 +49,7 @@ group :development, :test do
   gem 'pry'
   gem 'table_print'
   gem 'figaro'
+  gem 'simplecov', require: false, group: :test
 end
 
 group :development do

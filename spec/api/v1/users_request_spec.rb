@@ -65,4 +65,19 @@ describe 'Users API', type: :request do
 
     expect(result).to eq("{ Sorry, that email and password don't match. }")
   end
+
+  it "doesn't return api_key if user's api_key has been deactivated" do
+    user = User.create!( email: "whatever@example.com", password: "password", password_confirmation: "password", api_key_active: false)
+
+    post "/api/v1/sessions", params: {
+      "email": "whatever@example.com",
+      "password": "password"
+      }
+
+    expect(response.status).to eq(400)
+
+    result = JSON.parse(response.body)
+
+    expect(result).to eq("{ Something went wrong. }")
+  end
 end
