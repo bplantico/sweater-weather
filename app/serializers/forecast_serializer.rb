@@ -1,10 +1,9 @@
 # coding: utf-8
 
 class ForecastSerializer
-  def initialize(forecast, citystate, country)
+  def initialize(forecast, citystate)
     @forecast = forecast
     @city_state = citystate
-    @country = country
   end
 
   def all_details
@@ -15,8 +14,7 @@ class ForecastSerializer
                      "time_and_date" => formatted_date_time,
                      "high" => "High: #{formatted_temp(@forecast[:daily][:data][0][:temperatureHigh])}°",
                      "low" => "Low: #{formatted_temp(@forecast[:daily][:data][0][:temperatureLow])}°",
-                     "location" => formatted_location,
-                     "country" => "#{@country}"
+                     "location" => formatted_location
       },
       "details" => {
                     "icon" => "#{@forecast[:daily][:data][0][:icon]}",
