@@ -8,6 +8,9 @@ Rails.application.routes.draw do
         get '/gifs',        to: 'gifsforecast#index'
         post '/users',      to: 'users#create'
         post '/sessions',   to: 'sessions#create'
+        post '/road_trip',   to: 'roadtrip#show'
     end
   end
 end
+
+# [POST] "/api/v1/road_trip"
