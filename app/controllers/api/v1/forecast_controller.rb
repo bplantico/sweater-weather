@@ -6,6 +6,6 @@ class Api::V1::ForecastController < ApplicationController
     longitude = lat_long[:lng]
     dark_sky_response = Faraday.get "https://api.darksky.net/forecast/#{ENV['DARK_SKY_SECRET_KEY']}/#{latitude},#{longitude}"
     dark_sky_forecast = JSON.parse(dark_sky_response.body, symbolize_names: true)
-    render json: ForecastSerializer.new(dark_sky_forecast, params[:location]).all_details
+    render json: ForecastSerializer.new(dark_sky_forecast, params[:location]).all_details, status: :ok
   end
 end

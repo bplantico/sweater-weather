@@ -10,6 +10,6 @@ class Api::V1::MunchiesController < ApplicationController
     yelp_results = YelpBusinessSearchService.new.get_restaurants(destination, food_type, arrival_time)
     display_city = params[:end].strip.split(',')[0].titleize
 
-    render json: MunchiesSerializer.new(yelp_results, display_city).munchies_index
+    render json: MunchiesSerializer.new(yelp_results, display_city).munchies_index, status: :ok
   end
 end

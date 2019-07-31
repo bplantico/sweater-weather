@@ -18,6 +18,6 @@ class Api::V1::BackgroundsController < ApplicationController
     background_images_array = flickr_results.map { |result| result[:url_o] }
     background_image_urls = background_images_array.compact
 
-    render json: BackgroundImagesSerializer.new(background_image_urls)
+    render json: BackgroundImagesSerializer.new(background_image_urls), status: :ok
   end
 end

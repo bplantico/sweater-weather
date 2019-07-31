@@ -13,7 +13,7 @@ class Api::V1::GifsforecastController < ApplicationController
       gif.first.url
     end
 
-    render json: GifForecastSerializer.new(five_day_forecast, gif_urls).gif_forecast_index
+    render json: GifForecastSerializer.new(five_day_forecast, gif_urls).gif_forecast_index, status: :ok
   end
 
 end
