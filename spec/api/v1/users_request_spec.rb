@@ -25,12 +25,44 @@ describe 'Users API', type: :request do
       "password": "password",
       "password_confirmation": "password"
       }
-      
+
     expect(response).to be_successful
 
     result = JSON.parse(response.body)
 
     expect(result.values.first.class).to eq(String)
     expect(result.keys).to eq(["api_key"])
+  end
+
+  it "returns api_key if user sends valid credentials" do
+    user = User.create!( email: "whatever@example.com", password: "password", password_confirmation: "password")
+
+    post "/api/v1/sessions", params: {
+      "email": "whatever@example.com",
+      "password": "password"
+      }
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+
+    result = JSON.parse(response.body)
+
+    expect(result.values.first.class).to eq(String)
+    expect(result.keys).to eq(["api_key"])
+  end
+
+  it "doesn't return api_key if user sends invalid credentials" do
+    user = User.create!( email: "whatever@example.com", password: "password", password_confirmation: "password")
+
+    post "/api/v1/sessions", params: {
+      "email": "whatever@example.com",
+      "password": "wrong_password"
+      }
+
+    expect(response).to be_successful
+    expect(response.status).to eq(200)
+
+    result = JSON.parse(response.body)
+
+    expect(result).to eq("{ Sorry, that email and password don't match. }")
   end
 end
