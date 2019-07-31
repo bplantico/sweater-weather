@@ -11,7 +11,7 @@ class Api::V1::SessionsController < ApplicationController
         render json: "{ Something went wrong. }".to_json, status: :bad_request
       end
     else
-      render json: "{ Sorry, we can't find a user with that email. }".to_json
+      render json: "{ Please check that the email and password you've entered are correct. }".to_json
     end
   end
 end
