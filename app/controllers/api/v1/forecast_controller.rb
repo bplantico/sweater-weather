@@ -1,7 +1,7 @@
 class Api::V1::ForecastController < ApplicationController
 
   def show
-    city_state = params[:location].gsub(',',',+').gsub(' ','+')
+    city_state = params[:location]
     google_conn = Faraday.new(:url => 'https://maps.googleapis.com') do |faraday|
       faraday.params['key'] = ENV['GOOGLE_GEOCODE_API_KEY']
       faraday.params['address'] = city_state
