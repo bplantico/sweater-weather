@@ -2,7 +2,7 @@ class Api::V1::GifsforecastController < ApplicationController
 
   def index
     location = params[:location].split(',').first
-    five_day_forecast = DailyForecastService.new.get_five_day_forecast(location)
+    five_day_forecast = ForecastService.new.get_five_day_forecast(location)
 
     search_terms = five_day_forecast.map do |day|
       'weather ' + day.summary.gsub('.',' ') + ' ' + location
