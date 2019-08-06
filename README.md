@@ -35,21 +35,8 @@ YELP_CLIENT_ID: <paste your key here>
 GIPHY_API_KEY: <paste your key here>
 ```
 
-You should be ready to go!
+You're ready to go! Reach out if you have any other questions or concerns.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
 
 # <a name="forecast"></a>Forecast
 `http://the-real-sweater-weather.herokuapp.com/api/v1/forecast?location=[city,state-abbreviation]`
