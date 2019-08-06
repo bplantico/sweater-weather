@@ -17,7 +17,7 @@ A forecast request returns the weather for a location passed in as a parameter i
 
 ## Example Request
 
-`GET http://the-real-sweater-weather.herokuapp.com/api/v1/forecast?location=milwaukee,wi
+```GET http://the-real-sweater-weather.herokuapp.com/api/v1/forecast?location=milwaukee,wi
 
 {
     "currently": {
