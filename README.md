@@ -16,7 +16,8 @@ SweaterWeather provides seven API endpoints to interact with:
 A forecast request returns the weather for a location passed in as a parameter in the format of `city,two letter state abbreviation`. Locations using a format of `city,country` (i.e. `denver,usa`, `nairobi,kenya`, `brisbane,aus`, etc) can also retrieve a response. The response includes summary, details, and future forecast sections.
 
 ## Example Request
-```GET http://the-real-sweater-weather.herokuapp.com/api/v1/forecast?location=milwaukee,wi
+
+`GET http://the-real-sweater-weather.herokuapp.com/api/v1/forecast?location=milwaukee,wi
 
 {
     "currently": {
@@ -116,7 +117,7 @@ A forecast request returns the weather for a location passed in as a parameter i
             }
         ]
     }
-}
+}`
 
 # <a name="backgrounds"></a>Backgrounds
 
