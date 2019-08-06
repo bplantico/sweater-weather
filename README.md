@@ -11,7 +11,7 @@ SweaterWeather provides seven API endpoints to interact with:
 + [Sessions Request](#sessions)
 + [Road Trip Request](#road_trip)
 
-#Forecast
+<a name="forecast"></a>Forecast
 
 
 
@@ -30,7 +30,7 @@ SweaterWeather provides seven API endpoints to interact with:
 #sessions
 
 
-#road_trip
+<a name="road_trip"></a>Road Trip
 
 
 
