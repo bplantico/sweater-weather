@@ -33,6 +33,7 @@ YELP_API_KEY: vNDZYlyIpsy5-s_YAkk06g_Gt-SItvmoIYmOR9Pw5xcQ6oME51218Fs_2sKt7mw-cO
 YELP_CLIENT_ID: 7db5DgurzE2r9DM4i0PQNg
 
 GIPHY_API_KEY: 8Htn7VPlS5qcymdE5svQ8dzGj11yHU09
+```
 
 You should be ready to go!
 
