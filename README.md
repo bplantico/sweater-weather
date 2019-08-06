@@ -117,7 +117,7 @@ A forecast request returns the weather for a location passed in as a parameter i
             }
         ]
     }
-}`
+}
 
 # <a name="backgrounds"></a>Backgrounds
 
