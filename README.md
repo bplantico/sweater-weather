@@ -11,6 +11,45 @@ SweaterWeather provides seven API endpoints to interact with:
 + [Sessions Request](#sessions)
 + [Road Trip Request](#road_trip)
 
+# Configuration
+SweaterWeather is built with Ruby (version 2.4.1) and Ruby on Rails (version 5.2.3). It's not necessary to install and run the program on your local machine as the application is deployed to Heroku and the endpoints outlined below can be accessed without running the application locally, however, if you're interested in working on the code base the following instructions will help you get started:
+
+Fork and/or clone this repository to your local machine.
+
+`cd` into the `sweater-weather` directory and run `bundle install` from your command line.
+
+To set up the database, run `bundle exec rake db:{create,migrate}`
+
+To create your `application.yml` file using the Figaro gem, run `bundle exec figaro install`. You will need to acquire personal api keys from the following 3rd party apis and add them to the `application.yml` file:
+
+```
+DARK_SKY_SECRET_KEY: <paste your key here>
+GOOGLE_GEOCODE_API_KEY: <your key here>
+
+FLICKR_API_KEY: 58e9b9d2065e8123346675d816ba24b8
+FLICKR_API_SECRET: 2f0a9ae8535f86d2
+
+YELP_API_KEY: vNDZYlyIpsy5-s_YAkk06g_Gt-SItvmoIYmOR9Pw5xcQ6oME51218Fs_2sKt7mw-cOfDWg6H3C2KmeBS82XiL2EcNuSjFR6DQELUKyvQotp4Me12mcphYB2Q2nA-XXYx
+YELP_CLIENT_ID: 7db5DgurzE2r9DM4i0PQNg
+
+GIPHY_API_KEY: 8Htn7VPlS5qcymdE5svQ8dzGj11yHU09
+
+You should be ready to go!
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
 # <a name="forecast"></a>Forecast
 `http://the-real-sweater-weather.herokuapp.com/api/v1/forecast?location=[city,state-abbreviation]`
 
@@ -192,7 +231,7 @@ A gifs request takes one location parameter and responds with five objects that 
 
 ## Example Request
 ```
-GET http://the-real-sweater-weather.herokuapp.com/api/v1/gifs?location=denver,co
+GET http://the-real-sweater-weather.herokuapp.com/api/v1/gifs?location=[location]
 
 {
     "data": {
@@ -266,7 +305,7 @@ Example response:
 # <a name="road_trip"></a>Road Trip
 `http://the-real-sweater-weather.herokuapp.com/api/v1/road_trip?origin=[location]&destination=[location]&api_key=[api key]`
 
-The roadtrip endpoint receives a `POST` request with three parameters, 1) an `origin` location, 2) a `destination` location, and 3) an `api_key`. If the api key is active, the response is a JSON 1.0 object which includes a summary of the weather at the time of arrival to the destination and includes the temperature and estimated travel time.
+The roadtrip endpoint receives a `POST` request with three parameters, 1) an `origin` location, 2) a `destination` location, and 3) an `api_key`. If the api key is active, the response is a JSON 1.0 object which includes a summary of the weather at the time of arrival to the destination and includes the temperature and estimated travel time (in seconds).
 
 ## Example Request
 ```
@@ -285,21 +324,3 @@ Example response:
     }
 }
 ```
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
