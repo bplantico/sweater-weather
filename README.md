@@ -1,9 +1,9 @@
-# README
+# SWEATER WEATHER
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to SweaterWeather, a solo project completed by Brian Plantico during Module 3 at the Turing School of Software and Design. SweaterWeather is API which provides estimated travel times and customized forecast data by consuming third party API's including Google GeoCode, Google Directions, Yelp, Giphy, and Dark Sky Weather.
 
-Things you may want to cover:
+SweaterWeather currently provides seven endpoints:
+[create an anchor](#forecast)
 
 * Ruby version
 
