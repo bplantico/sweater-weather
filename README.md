@@ -24,15 +24,15 @@ To create your `application.yml` file using the Figaro gem, run `bundle exec fig
 
 ```
 DARK_SKY_SECRET_KEY: <paste your key here>
-GOOGLE_GEOCODE_API_KEY: <your key here>
+GOOGLE_GEOCODE_API_KEY: <paste your key here>
 
-FLICKR_API_KEY: 58e9b9d2065e8123346675d816ba24b8
-FLICKR_API_SECRET: 2f0a9ae8535f86d2
+FLICKR_API_KEY: <paste your key here>
+FLICKR_API_SECRET: <paste your key here>
 
-YELP_API_KEY: vNDZYlyIpsy5-s_YAkk06g_Gt-SItvmoIYmOR9Pw5xcQ6oME51218Fs_2sKt7mw-cOfDWg6H3C2KmeBS82XiL2EcNuSjFR6DQELUKyvQotp4Me12mcphYB2Q2nA-XXYx
-YELP_CLIENT_ID: 7db5DgurzE2r9DM4i0PQNg
+YELP_API_KEY: <paste your key here>
+YELP_CLIENT_ID: <paste your key here>
 
-GIPHY_API_KEY: 8Htn7VPlS5qcymdE5svQ8dzGj11yHU09
+GIPHY_API_KEY: <paste your key here>
 ```
 
 You should be ready to go!
